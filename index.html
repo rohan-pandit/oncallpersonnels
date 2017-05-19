@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>On-Call Personnel, Inc</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
+    <link rel="stylesheet" href="css/toast/grid.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
@@ -12,184 +13,237 @@
 
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-        $('#fullpage').fullpage({
-            anchors: ['home', 'about', 'services', 'contact'],
-            navigation: true,
-            css3: true,
-            onLeave: function(index, nextIndex, direction){
-        //leaving 1st section
-        if(index == 1){
-           $('.nav').addClass('fixed');
-           $('.nav').addClass('visible');
-       }
-        //back to the 1st section
-        if(nextIndex == 1){
-            $('.nav').removeClass('fixed');
-            $('.nav').addClass('invisible');
-            $('.nav').removeClass('visible');
-        }
-    } 
-});
-    });
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['home', 'about', 'services', 'contact'],
+                navigation: true,
+                css3: true,
+                onLeave: function (index, nextIndex, direction) {
+                    //leaving 1st section
+                    if (index == 1) {
+                        $('.nav').addClass('fixed');
+                        $('.nav').addClass('visible');
+                    }
+                    //back to the 1st section
+                    if (nextIndex == 1) {
+                        $('.nav').removeClass('fixed');
+                        $('.nav').addClass('invisible');
+                        $('.nav').removeClass('visible');
+                    }
+                }
+            });
+        });
     </script>
     <style>
-    body{
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-        font-family: XfinityStandard, Verdana, Helvetica, sans-serif;
-    }
-    #fp-nav ul, .fp-slidesNav ul {
-        padding-right: 75px;
-    }
+        body {
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-family: XfinityStandard, Verdana, Helvetica, sans-serif;
+        }
 
-    @media only screen and (max-width: 768px) {
         #fp-nav ul, .fp-slidesNav ul {
+            padding-right: 75px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #fp-nav ul, .fp-slidesNav ul {
+                visibility: hidden;
+            }
+        }
+
+        @media only screen and (max-width: 375px) {
+            #fp-nav ul, .fp-slidesNav ul {
+                padding-right: 10px;
+            }
+        }
+
+        #fp-nav ul li, .fp-slidesNav ul li {
+            margin: 15px;
+        }
+
+        #fp-nav ul li a span, .fp-slidesNav ul li a span {
+            height: 12px;
+            width: 12px;
+            background: transparent;
+            border: solid #ffffff 1px;
+        }
+
+        #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+            height: 12px;
+            width: 12px;
+            background: #ffffff;
+            margin: -2px 0 0 -2px;
+        }
+
+        .navbar-default {
+            margin-top: 10px;
+            background: transparent;
+            border: none;
+        }
+
+        .navbar-default .navbar-nav > li > a {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+            color: #fff;
+            background-color: transparent;
+            font-weight: 600;
+        }
+
+        #section0 {
+            background-image: url("img/home_bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #section1 {
+            background: white;
+        }
+
+        #section2 {
+            background: blue;
+
+        }
+
+        #section3 {
+            background: green;
+        }
+
+        /*h5 {
+            font-size: 18px;
+            color: #fff;
+            line-height: 120%;
+            letter-spacing: 1px;
+            font-weight: 400;
+            text-align: left;
+            margin-bottom: 40px;
+            z-index: 100;
+        }*/
+
+        .fp-tableCell {
+            vertical-align: top;
+            z-index: 100;
+        }
+
+        .footer {
+            position: fixed;
+            width: 100%;
+        }
+
+        .link-button {
+            padding: 13px 32px;
+            color: #000;
+            font-weight: 500;
+            background: #FFF;
+            border-radius: 40px;
+            border: 0;
+            margin-bottom: 100px;
+            z-index: 100;
+        }
+
+        .backgroundImage {
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            position: absolute;
+        }
+
+        .nav {
+            position: absolute;
+            top: 100%;
+            margin-top: -100px;
+            left: 0;
+            background-color: rgba(179, 179, 179, 0.8);;
+            width: 100%;
+            color: #fff;
+            height: 50px;
+            z-index: 999;
             visibility: hidden;
         }
-    }
 
-    @media only screen and (max-width: 375px) {
-        #fp-nav ul, .fp-slidesNav ul {
-            padding-right: 10px;
+        .nav.fixed {
+            bottom: auto;
+            top: 0;
+            margin-top: 0;
         }
-    }
 
-    #fp-nav ul li, .fp-slidesNav ul li {
-        margin: 15px;
-    }
+        .invisible {
+            visibility: hidden;
+        }
 
-    #fp-nav ul li a span, .fp-slidesNav ul li a span {
-        height: 12px;
-        width: 12px;
-        background: transparent;
-        border: solid #ffffff 1px;
-    }
+        .visible {
+            visibility: visible;
+        }
 
-    #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
-        height: 12px;
-        width: 12px;
-        background: #ffffff;
-        margin: -2px 0 0 -2px;
-    }
+        .container {
+            margin-top: 100px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
 
-    .navbar-default {
-        margin-top: 10px;
-        background: transparent;
-        border: none;
-    }
+        .grid > h1 {
+            text-align: center;
+            font-size: 60px;
+            color: lightgrey;
+            margin-bottom: 15px;
 
-    .navbar-default .navbar-nav > li > a {
-        color: #fff;
-        font-weight: 500;
-    }
+        }
 
-    .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-        color: #fff;
-        background-color: transparent;
-        font-weight: 600;
-    }
+        @media (min-width: 768px) {
+            .container {
+                    width: 750px;
+            }
+        }
 
-    #section0 {
-        background-image: url("img/home_bg.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
+        @media (min-width: 992px) {
 
-    #section1 {
-        background: red;
-    }
+            .container {
+                    width: 970px;
+            }
+        }
 
-    #section2 {
-        background: blue;
+        @media (min-width: 1200px) {
+            .container {
+                    width: 1170px;
+            }
 
-    }
+        }
 
-    #section3 {
-        background: green;
-    }
-
-    h5{
-        font-size: 18px;
-        color: #fff;
-        line-height: 120%;
-        letter-spacing: 1px;
-        font-weight: 400;
-        text-align: left;
-        margin-bottom: 40px;
-        z-index: 100;
-    }
-
-    .fp-tableCell {
-        /*vertical-align: bottom;*/
-        z-index: 100;
-    }
-
-    .footer {
-        position: fixed;
-        width: 100%;
-    }
-
-    .link-button{
-        padding: 13px 32px;
-        color: #000;
-        font-weight: 500;
-        background: #FFF;
-        border-radius: 40px;
-        border: 0;
-        margin-bottom: 100px;
-        z-index: 100;
-    }
-
-    .backgroundImage {
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        position: absolute;
-    }
-
-    .nav{
-        position:absolute;
-        top:100%;
-        margin-top: -100px;
-        left:0;
-        background-color:rgba(179, 179, 179, 0.8);;
-        width:100%;
-        color: #fff;
-        height: 50px;
-        z-index:999;
-        visibility: hidden;
-    }
-    .nav.fixed{
-        bottom:auto;
-        top:0;
-        margin-top: 0;
-    }
-
-    .invisible {
-        visibility: hidden;
-    }
-
-    .visible {
-        visibility: visible;
-    }
+        .center-div {
+            margin: 0 auto;
+            max-width: 400px;
+            height: 2px;
+            background-color: orange;
+        }
 
     </style>
 </head>
 <body>
-    <div class="nav">Nav</div>
-    <div id="fullpage">
-        <div class="section " id="section0">
-     </div>
-     <div class="section" id="section1">
-        
+<div class="nav">Nav</div>
+<div id="fullpage">
+    <div class="section" id="section0">
+
+    </div>
+    <div class="section" id="section1">
+        <div class="container">
+            <div class="grid">
+                <h1>ABOUT US</h1>
+                <div class="center-div">
+
+                </div>
+            </div>
+        </div>
     </div>
     <div class="section" id="section2">
 
     </div>
     <div class="section" id="section3">
-        <h1>test4</h1>
+
     </div>
 </div>
 </body>
