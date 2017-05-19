@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>On-Call Personnel, Inc</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
-    <link rel="stylesheet" href="css/toast/grid.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
     <script type="text/javascript" src="js/scrolloverflow.min.js"></script>
-
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#fullpage').fullpage({
@@ -38,7 +39,6 @@
         body {
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            font-family: XfinityStandard, Verdana, Helvetica, sans-serif;
         }
 
         #fp-nav ul, .fp-slidesNav ul {
@@ -75,23 +75,6 @@
             margin: -2px 0 0 -2px;
         }
 
-        .navbar-default {
-            margin-top: 10px;
-            background: transparent;
-            border: none;
-        }
-
-        .navbar-default .navbar-nav > li > a {
-            color: #fff;
-            font-weight: 500;
-        }
-
-        .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-            color: #fff;
-            background-color: transparent;
-            font-weight: 600;
-        }
-
         #section0 {
             background-image: url("img/home_bg.png");
             background-size: cover;
@@ -99,23 +82,23 @@
         }
 
         #section1 {
-            background: white;
+            background: #fff;
         }
 
         #section2 {
-            background: blue;
+            background: #fff;
 
         }
 
         #section3 {
-            background: green;
+            background: #fff;
         }
 
         /*h5 {
             font-size: 18px;
             color: #fff;
             line-height: 120%;
-            letter-spacing: 1px;
+            letter-spacing: 1px;> .containe
             font-weight: 400;
             text-align: left;
             margin-bottom: 40px;
@@ -124,22 +107,6 @@
 
         .fp-tableCell {
             vertical-align: top;
-            z-index: 100;
-        }
-
-        .footer {
-            position: fixed;
-            width: 100%;
-        }
-
-        .link-button {
-            padding: 13px 32px;
-            color: #000;
-            font-weight: 500;
-            background: #FFF;
-            border-radius: 40px;
-            border: 0;
-            margin-bottom: 100px;
             z-index: 100;
         }
 
@@ -156,12 +123,13 @@
             top: 100%;
             margin-top: -100px;
             left: 0;
-            background-color: rgba(179, 179, 179, 0.8);;
+            background-color: rgb(255, 255, 255);
             width: 100%;
-            color: #fff;
-            height: 50px;
+            color: dimgrey;
+            height: 80px;
             z-index: 999;
             visibility: hidden;
+            font-family: 'Josefin Sans', sans-serif;
         }
 
         .nav.fixed {
@@ -179,7 +147,6 @@
         }
 
         .container {
-            margin-top: 100px;
             padding-right: 15px;
             padding-left: 15px;
             margin-right: auto;
@@ -191,59 +158,106 @@
             font-size: 60px;
             color: lightgrey;
             margin-bottom: 15px;
-
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 100;
+            letter-spacing: 1px;
         }
 
         @media (min-width: 768px) {
             .container {
-                    width: 750px;
+                width: 750px;
             }
         }
 
         @media (min-width: 992px) {
 
             .container {
-                    width: 970px;
+                width: 970px;
             }
         }
 
         @media (min-width: 1200px) {
             .container {
-                    width: 1170px;
+                width: 1170px;
             }
 
         }
 
-        .center-div {
+        .header-underline {
             margin: 0 auto;
-            max-width: 400px;
+            max-width: 25%;
             height: 2px;
-            background-color: orange;
+            background: #f99813;
+            background: -webkit-linear-gradient(left, #fcdcb3, #f99813);
+            background: -o-linear-gradient(right, #fcdcb3, #f99813);
+            background: -moz-linear-gradient(right, #fcdcb3, #f99813);
+            background: linear-gradient(to right, #fcdcb3, #f99813);
+        }
+
+        .nav > .container > ul {
+            list-style-type: none;
+            padding: 10px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav > .container > ul > li {
+            float: left;
+            padding: 0 80px;
+        }
+
+        .margin-lg {
+            margin-top: 100px;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
         }
 
     </style>
 </head>
 <body>
-<div class="nav">Nav</div>
+<div class="nav">
+    <div class="container centered">
+        <ul>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li><img src="img/Logo-Image.png" height="70px" style="margin-top: -25px;"/></li>
+            <li>SERVICES</li>
+            <li>CONTACT</li>
+        </ul>
+    </div>
+</div>
 <div id="fullpage">
     <div class="section" id="section0">
-
     </div>
     <div class="section" id="section1">
         <div class="container">
             <div class="grid">
-                <h1>ABOUT US</h1>
-                <div class="center-div">
-
-                </div>
+                <h1 class="margin-lg">ABOUT US</h1>
+                <div class="header-underline"></div>
             </div>
         </div>
     </div>
     <div class="section" id="section2">
-
+        <div class="grid">
+            <h1 class="margin-lg">SERVICES</h1>
+            <div class="header-underline"></div>
+        </div>
     </div>
     <div class="section" id="section3">
-
+        <div class="container">
+            <div class="grid">
+                <h1 class="margin-lg">CONTACT</h1>
+                <div class="header-underline"></div>
+                <div id="map"></div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
