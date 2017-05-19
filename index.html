@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>On-Call Personnel, Inc</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
-    <link rel="stylesheet" href="css/toast/grid.css">
+    <link rel="stylesheet" href="css/grid.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
@@ -29,6 +29,7 @@
                         $('.nav').removeClass('fixed');
                         $('.nav').addClass('invisible');
                         $('.nav').removeClass('visible');
+                        //$('#fp-nav ul li a span, .fp-slidesNav ul li a span').attr('background', 'blue');
                     }
                 }
             });
@@ -67,6 +68,8 @@
             background: transparent;
             border: solid #ffffff 1px;
         }
+
+
 
         #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
             height: 12px;
@@ -179,12 +182,13 @@
         }
 
         .container {
-            margin-top: 100px;
             padding-right: 15px;
             padding-left: 15px;
             margin-right: auto;
             margin-left: auto;
         }
+
+
 
         .grid > h1 {
             text-align: center;
@@ -221,6 +225,24 @@
             background-color: orange;
         }
 
+        .grid-left{
+            margin-top: 75px;
+            margin-left: 175px;
+            float: left;
+        }
+
+        .grid-center{
+            margin-top: 75px;
+            margin-left: 100px;
+        }
+        .grid-right{
+            margin-top: 75px;
+            margin-right: 175px;
+            float: right;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -235,6 +257,27 @@
                 <h1>ABOUT US</h1>
                 <div class="center-div">
 
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3" >
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3" >
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col--2-of-2" >
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
                 </div>
             </div>
         </div>
