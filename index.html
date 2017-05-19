@@ -30,6 +30,7 @@
                         $('.nav').removeClass('fixed');
                         $('.nav').addClass('invisible');
                         $('.nav').removeClass('visible');
+                        //$('#fp-nav ul li a span, .fp-slidesNav ul li a span').attr('background', 'blue');
                     }
                 }
             });
@@ -67,6 +68,8 @@
             background: transparent;
             border: solid #ffffff 1px;
         }
+
+
 
         #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
             height: 12px;
@@ -153,6 +156,8 @@
             margin-left: auto;
         }
 
+
+
         .grid > h1 {
             text-align: center;
             font-size: 60px;
@@ -219,6 +224,24 @@
             transform: translate(-50%, -50%)
         }
 
+        .grid-left{
+            margin-top: 75px;
+            margin-left: 175px;
+            float: left;
+        }
+
+        .grid-center{
+            margin-top: 75px;
+            margin-left: 100px;
+        }
+        .grid-right{
+            margin-top: 75px;
+            margin-right: 175px;
+            float: right;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -240,7 +263,30 @@
         <div class="container">
             <div class="grid">
                 <h1 class="margin-lg">ABOUT US</h1>
-                <div class="header-underline"></div>
+          <div class="header-underline"></div>
+
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3" >
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3">
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col grid__col--1-of-3" >
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
+                <div class="grid__col--2-of-2" >
+                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+                </div>
             </div>
         </div>
     </div>
@@ -259,5 +305,4 @@
             </div>
         </div>
     </div>
-</div>
 </body>
