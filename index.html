@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>On-Call Personnel, Inc</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css"/>
-    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/skeleton.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeV5ehsH8UCRjZCXsrT7sBTB8N3qtqc1w&callback=initMap"></script>
     <script type="text/javascript" src="js/scrolloverflow.min.js"></script>
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -68,8 +69,6 @@
             background: transparent;
             border: solid #ffffff 1px;
         }
-
-
 
         #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
             height: 12px;
@@ -149,16 +148,7 @@
             visibility: visible;
         }
 
-        .container {
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-
-
-
-        .grid > h1 {
+        h1 {
             text-align: center;
             font-size: 60px;
             color: lightgrey;
@@ -166,26 +156,6 @@
             font-family: 'Josefin Sans', sans-serif;
             font-weight: 100;
             letter-spacing: 1px;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                width: 750px;
-            }
-        }
-
-        @media (min-width: 992px) {
-
-            .container {
-                width: 970px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .container {
-                width: 1170px;
-            }
-
         }
 
         .header-underline {
@@ -199,17 +169,17 @@
             background: linear-gradient(to right, #fcdcb3, #f99813);
         }
 
-        .nav > .container > ul {
-            list-style-type: none;
-            padding: 10px;
-            text-align: center;
-            margin-left: auto;
+        .nav > container {
+
+            padding-right: 15px;
+            padding-left: 15px;
             margin-right: auto;
+            margin-left: auto;
         }
 
-        .nav > .container > ul > li {
-            float: left;
-            padding: 0 80px;
+        .nav a {
+            margin-top: 10px;
+            padding: 0 30px;
         }
 
         .margin-lg {
@@ -224,36 +194,45 @@
             transform: translate(-50%, -50%)
         }
 
-        .grid-left{
+        .grid-left {
             margin-top: 75px;
             margin-left: 175px;
             float: left;
         }
 
-        .grid-center{
+        .grid-center {
             margin-top: 75px;
             margin-left: 100px;
         }
-        .grid-right{
+
+        .grid-right {
             margin-top: 75px;
             margin-right: 175px;
             float: right;
         }
 
+        #map {
+            height: 200px;
+            width: 400px;
+        }
 
-
+        .contact-info {
+            height: 100%;
+            width: 100%;
+            background-color: #f99813;
+        }
     </style>
 </head>
 <body>
 <div class="nav">
     <div class="container centered">
-        <ul>
-            <li>HOME</li>
-            <li>ABOUT</li>
-            <li><img src="img/Logo-Image.png" height="70px" style="margin-top: -25px;"/></li>
-            <li>SERVICES</li>
-            <li>CONTACT</li>
-        </ul>
+        <div class="row">
+            <div class="two columns"><a>HOME</a></div>
+            <div class="two columns"><a>ABOUT</a></div>
+            <div class="four columns"> <img src="img/Logo-Image.png" height="50px" style="margin-left: 20px"/></div>
+            <div class="two columns"><a>SERVICES</a></div>
+            <div class="two columns"><a>CONTACT</a></div>
+        </div>
     </div>
 </div>
 <div id="fullpage">
@@ -263,46 +242,51 @@
         <div class="container">
             <div class="grid">
                 <h1 class="margin-lg">ABOUT US</h1>
-          <div class="header-underline"></div>
+                <div class="header-underline"></div>
 
-                </div>
-                <div class="grid__col grid__col--1-of-3">
-                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
-                </div>
-                <div class="grid__col grid__col--1-of-3">
-                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
-                </div>
-                <div class="grid__col grid__col--1-of-3" >
-                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
-                </div>
-                <div class="grid__col grid__col--1-of-3">
-                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
-                </div>
-                <div class="grid__col grid__col--1-of-3">
-                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
-                </div>
-                <div class="grid__col grid__col--1-of-3" >
-                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
-                </div>
-                <div class="grid__col--2-of-2" >
-                    <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
-                </div>
+            </div>
+            <div class="grid__col grid__col--1-of-3">
+                <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+            </div>
+            <div class="grid__col grid__col--1-of-3">
+                <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+            </div>
+            <div class="grid__col grid__col--1-of-3">
+                <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+            </div>
+            <div class="grid__col grid__col--1-of-3">
+                <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+            </div>
+            <div class="grid__col grid__col--1-of-3">
+                <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+            </div>
+            <div class="grid__col grid__col--1-of-3">
+                <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
+            </div>
+            <div class="grid__col--2-of-2">
+                <img src="img/Logo-Image.png" style="height: 50%; width: 50%"/>
             </div>
         </div>
     </div>
     <div class="section" id="section2">
-        <div class="grid">
-            <h1 class="margin-lg">SERVICES</h1>
-            <div class="header-underline"></div>
-        </div>
+        <h1 class="margin-lg">SERVICES</h1>
+        <div class="header-underline"></div>
     </div>
     <div class="section" id="section3">
         <div class="container">
-            <div class="grid">
-                <h1 class="margin-lg">CONTACT</h1>
-                <div class="header-underline"></div>
-                <div id="map"></div>
+            <h1 class="margin-lg">CONTACT</h1>
+            <div class="header-underline"></div>
+            <div class="row">
+                <div class="six columns">
+                    <div id="map"></div>
+                </div>
+                <div class="six columns contact-info">
+                </div>
             </div>
         </div>
     </div>
+</div>
 </body>
+
+
+
